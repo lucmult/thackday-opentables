@@ -13,7 +13,7 @@
     <key id='nome' type='xs:string' paramType='variable' required="true" />  
 </inputs>
 <execute><![CDATA[
-var q = y.query('select href, strong from html where '
+var q = y.query('select content, href, strong from html where '
                  + 'url="http://www.excelencias.org.br/@busca.php?nome='
                  + nome +'" and xpath=\'//div[@id="contem"]/a\'');
 
@@ -29,7 +29,7 @@ for each(a in results.a){
     id = new RegExp("id=(\\d+)").exec(a); // search by id in entire a tag
     id = id[1];   // get the second ocurrence
     fdp = a.strong; // get the strong tag inside tag a
-    fdp = fdp.text(); // get the text from tag strong
+    fdp = a.text() + '|' + fdp.text(); // get the text from tag strong
     entry.appendChild(<id>{id}</id>); //
     entry.appendChild(<nome>{fdp}</nome>);
     entries.appendChild(entry);
