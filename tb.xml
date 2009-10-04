@@ -22,6 +22,7 @@ var fdp = null;
 
 for each(a in results.a){
     id = new RegExp("id=(\\d+)").exec(a);
+    id = id[0];
     fdp = a.strong;
     a.appendChild(<id>{id}</id>);
     a.appendChild(<nome>{fdp}</nome>);
