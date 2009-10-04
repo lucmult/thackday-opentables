@@ -30,9 +30,9 @@ for each(a in results.a){
     fdp = fdp.text(); // get the text from tag strong
     entry.appendChild(<id>{id}</id>); //
     entry.appendChild(<nome>{fdp}</nome>);
-    response.object.appendChild(entry);
+    entries.appendChild(entry);
 }
-//response.object = entries.getChildNodes();
+response.object = entries;
 ]]></execute>
     </select>
  
