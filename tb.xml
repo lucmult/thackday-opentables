@@ -23,8 +23,8 @@ var fdp = null;
 for each(a in results){
     id = new RegExp("id=\\d+").exec(a.href);
     fdp = a.strong;
-    a.appendChild(<id>id</id>);
-    a.appendChild(<nome>fdp</nome>);
+    a.appendChild(<id>{id}</id>);
+    a.appendChild(<nome>{fdp}</nome>);
     entries.appendChild(a);
 }
 response.object = entries;
