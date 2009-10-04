@@ -31,7 +31,9 @@ for each(a in results.a){
     id = id[1];   // get the second ocurrence
     fdp = a.strong.text() + ' - ' + a.text() ; // get the text from tag strong
     partido = new RegExp("- (.*)$").exec(a.text());
-    partido = partido[1];
+    if (partido != null) {
+         partido = partido[1];
+    }
     entry.appendChild(<id>{id}</id>); //
     entry.appendChild(<nome>{fdp}</nome>);
     entry.appendChild(<partido>{partido}</partido>);
