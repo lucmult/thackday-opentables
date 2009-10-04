@@ -32,7 +32,7 @@ for each(a in results.a){
     entry.appendChild(<nome>{fdp}</nome>);
     entries.appendChild(entry);
 }
-response.object = entries;
+response.object = entries.childNodes;
 ]]></execute>
     </select>
  
