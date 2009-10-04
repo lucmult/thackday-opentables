@@ -23,14 +23,17 @@ var entries = <lero></lero>;
 // defining vars to re-use on for loop
 var id = null;
 var fdp = null;
+var partido = null;
 
 for each(a in results.a){
     var entry = <political></political>;
     id = new RegExp("id=(\\d+)").exec(a); // search by id in entire a tag
     id = id[1];   // get the second ocurrence
     fdp = a.strong.text() + ' - ' + a.text() ; // get the text from tag strong
+    partido = new RegExp("- (\\w)$");
+    partido = partido[1];
     entry.appendChild(<id>{id}</id>); //
-    entry.appendChild(<nome>{fdp}</nome>);
+    entry.appendChild(<nome>{partido} - {fdp}</nome>);
     entries.appendChild(entry);
 }
 response.object = entries;
