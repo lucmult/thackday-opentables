@@ -5,7 +5,7 @@
         <sampleQuery>select * from {table} where nome="maluf"</sampleQuery> 
   </meta>
   <bindings>
-    <select itemPath="" produces="XML">
+    <select itemPath="lero.political" produces="XML">
 <urls>
 <url></url>
 </urls>
