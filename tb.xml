@@ -27,7 +27,7 @@ for each(a in results){
     a.appendChild(<nome>{fdp}</nome>);
     entries.appendChild(a);
 }
-response.object = entries;
+response.object = results;
 ]]></execute>
     </select>
  
