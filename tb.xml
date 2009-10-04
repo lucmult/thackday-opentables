@@ -14,22 +14,25 @@ var nome = "maluf";
 var q = y.query('select href, strong from html where '
                  + 'url="http://www.excelencias.org.br/@busca.php?nome='
                  + nome +'" and xpath=\'//div[@id="contem"]/a\'');
-var results = q.results; 
-var entries = <entries></entries>;
 
+var results = q.results; 
+var entries = <lero></lero>;
+
+// defining vars to re-use on for loop
 var id = null;
 var fdp = null;
 
 for each(a in results.a){
-    id = new RegExp("id=(\\d+)").exec(a);
-    id = id[1];
-    fdp = a.strong;
-    fdp = fdp.text();
-    a.appendChild(<id>{id}</id>);
-    a.appendChild(<nome>{fdp}</nome>);
-    entries.appendChild(a);
+    var entry = <political><political>;
+    id = new RegExp("id=(\\d+)").exec(a); // search by id in entire a tag
+    id = id[1];   // get the second ocurrence
+    fdp = a.strong; // get the strong tag inside tag a
+    fdp = fdp.text(); // get the text from tag strong
+    entry.appendChild(<id>{id}</id>); //
+    entry.appendChild(<nome>{fdp}</nome>);
+    entries.appendChild(entry);
 }
-response.object = results;
+response.object = entries;
 ]]></execute>
     </select>
  
