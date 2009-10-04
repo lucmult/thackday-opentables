@@ -2,16 +2,18 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
   <meta>
 	<description></description>
-<sampleQuery>select * from {table} where nome="maluf"</sampleQuery> 
+        <sampleQuery>select * from {table} where nome="maluf"</sampleQuery> 
   </meta>
   <bindings>
     <select itemPath="" produces="XML">
 <urls>
 <url></url>
 </urls>
+<inputs>
+    <key id='nome' type='xs:string' paramType='variable' required="true" />  
+</inputs>
 <execute><![CDATA[
-var nome = "maluf";
-var q = y.query('select href, strong from html where '
+var q = y.query('select content, href, strong from html where '
                  + 'url="http://www.excelencias.org.br/@busca.php?nome='
                  + nome +'" and xpath=\'//div[@id="contem"]/a\'');
 
@@ -21,15 +23,18 @@ var entries = <lero></lero>;
 // defining vars to re-use on for loop
 var id = null;
 var fdp = null;
+var partido = null;
 
 for each(a in results.a){
     var entry = <political></political>;
     id = new RegExp("id=(\\d+)").exec(a); // search by id in entire a tag
     id = id[1];   // get the second ocurrence
-    fdp = a.strong; // get the strong tag inside tag a
-    fdp = fdp.text(); // get the text from tag strong
+    fdp = a.strong.text() + ' - ' + a.text() ; // get the text from tag strong
+    partido = new RegExp("- (.*)$").exec(a.text());
+    partido = partido[1];
     entry.appendChild(<id>{id}</id>); //
     entry.appendChild(<nome>{fdp}</nome>);
+    entry.appendChild(<partido>{partido}</partido>);
     entries.appendChild(entry);
 }
 response.object = entries;
