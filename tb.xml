@@ -17,12 +17,14 @@ var q = y.query('select href, strong from html where '
 var results = q.results; 
 var entries = <entries></entries>;
 
+var id = null;
+var fdp = null;
 
 for each(a in results){
-    var id = new RegExp("id=\\d+").exec(a.href);
-    var fdp = a.strong;
-    a.appendChild(id);
-    a.appendChild(fdp);
+    id = new RegExp("id=\\d+").exec(a.href);
+    fdp = a.strong;
+    a.appendChild(<id>id</id>);
+    a.appendChild(<nome>fdp</nome>);
     entries.appendChild(a);
 }
 response.object = entries;
