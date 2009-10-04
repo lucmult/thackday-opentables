@@ -33,7 +33,8 @@ for each(a in results.a){
     partido = new RegExp("- (.*)$").exec(a.text());
     partido = partido[1];
     entry.appendChild(<id>{id}</id>); //
-    entry.appendChild(<nome>{partido}| - {fdp}</nome>);
+    entry.appendChild(<nome>{fdp}</nome>);
+    entry.appendChild(<partido>{partido}</partido>);
     entries.appendChild(entry);
 }
 response.object = entries;
