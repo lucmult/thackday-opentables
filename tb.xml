@@ -10,12 +10,11 @@
 <url></url>
 </urls>
 <execute><![CDATA[
-	 default xml namespace = "http://www.w3.org/2005/Atom";
-var xml = request.get().response; //call the url defined above
-
-entries = <entries></entries>;//prep the output object
-entry = null; //individual entry in xml obj. used in loop below.
-a = null;
+default xml namespace = "http://www.w3.org/2005/Atom";
+var xml = request.get().response, //call the url defined above
+    entries = <entries></entries>,   //prep the output object
+    entry = null,                       //individual entry in xml obj. used in loop below.
+    a = null;
 
 for each(a in results){
     var id = new RegExp("id=\\d+").exec(a.href);
