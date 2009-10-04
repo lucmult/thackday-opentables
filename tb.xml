@@ -24,6 +24,7 @@ for each(a in results.a){
     id = new RegExp("id=(\\d+)").exec(a);
     id = id[1];
     fdp = a.strong;
+    fdp = fdp.text();
     a.appendChild(<id>{id}</id>);
     a.appendChild(<nome>{fdp}</nome>);
     entries.appendChild(a);
