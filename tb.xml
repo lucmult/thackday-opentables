@@ -23,7 +23,7 @@ var id = null;
 var fdp = null;
 
 for each(a in results.a){
-    var entry = <political><political>;
+    var entry = <political></political>;
     id = new RegExp("id=(\\d+)").exec(a); // search by id in entire a tag
     id = id[1];   // get the second ocurrence
     fdp = a.strong; // get the strong tag inside tag a
