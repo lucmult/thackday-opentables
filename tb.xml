@@ -28,7 +28,7 @@ for each(a in results.a){
     var entry = <political></political>;
     id = new RegExp("id=(\\d+)").exec(a); // search by id in entire a tag
     id = id[1];   // get the second ocurrence
-    fdp = fdp.text() + ' - ' + a.text(); // get the text from tag strong
+    fdp = a.strong.text() + ' - ' + a.text() ; // get the text from tag strong
     entry.appendChild(<id>{id}</id>); //
     entry.appendChild(<nome>{fdp}</nome>);
     entries.appendChild(entry);
