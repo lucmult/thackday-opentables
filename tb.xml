@@ -30,7 +30,7 @@ for each(a in results.a){
     id = new RegExp("id=(\\d+)").exec(a); // search by id in entire a tag
     id = id[1];   // get the second ocurrence
     fdp = a.strong.text() + ' - ' + a.text() ; // get the text from tag strong
-    partido = new RegExp("- (\\w)$").exec(a.text());
+    partido = new RegExp("(\\w+)$").exec(a.text());
     //partido = partido[1];
     entry.appendChild(<id>{id}</id>); //
     entry.appendChild(<nome>{partido} - {fdp}</nome>);
