@@ -2,7 +2,7 @@
 <table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
   <meta>
 	<description></description>
-<sampleQuery>select * from {table} where nome="maluf"</sampleQuery> 
+        <sampleQuery>select * from {table} where nome="maluf"</sampleQuery> 
   </meta>
   <bindings>
     <select itemPath="" produces="XML">
@@ -10,7 +10,6 @@
 <url></url>
 </urls>
 <execute><![CDATA[
-var nome = "maluf";
 var q = y.query('select href, strong from html where '
                  + 'url="http://www.excelencias.org.br/@busca.php?nome='
                  + nome +'" and xpath=\'//div[@id="contem"]/a\'');
