@@ -23,7 +23,7 @@ for each(a in xml){
     a.appendChild(fdp);
     entries.appendChild(a);
 }
-response.object = entries;
+response.object = xml;
 ]]></execute>
     </select>
  
