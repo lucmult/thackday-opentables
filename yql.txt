@@ -1,1 +1,2 @@
-use "http://github.com/lucmult/thackday-opentables/raw/master/tb.xml" as lero; select * from lero
+use "http://github.com/lucmult/thackday-opentables/raw/master/tb.xml" as lero; select * from lero where nome = 'jose'
+
