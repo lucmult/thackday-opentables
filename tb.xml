@@ -16,7 +16,7 @@ var xml = request.get().response, //call the url defined above
     entry = null,                       //individual entry in xml obj. used in loop below.
     a = null;
 
-for each(a in results){
+for each(a in xml){
     var id = new RegExp("id=\\d+").exec(a.href);
     var fdp = a.strong;
     a.appendChild(id);
