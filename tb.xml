@@ -15,6 +15,7 @@ var q = y.query('select href, strong from html where '
                  + 'url="http://www.excelencias.org.br/@busca.php?nome='
                  + nome +'" and xpath=\'//div[@id="contem"]/a\'');
 var results = q.results; 
+var entries = <entries></entries>;
 
 
 for each(a in results){
