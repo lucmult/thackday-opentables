@@ -10,20 +10,20 @@
 <url></url>
 </urls>
 <execute><![CDATA[
-default xml namespace = "http://www.w3.org/2005/Atom";
-var xml = request.get().response, //call the url defined above
-    entries = <entries></entries>,   //prep the output object
-    entry = null,                       //individual entry in xml obj. used in loop below.
-    a = null;
+var q = y.query('select href, strong from html where '
+                 + 'url="http://www.excelencias.org.br/@busca.php?nome='
+                 + nome +'" and xpath=\'//div[@id="contem"]/a\'');
+var results = q.results; 
 
-for each(a in xml){
+
+for each(a in results){
     var id = new RegExp("id=\\d+").exec(a.href);
     var fdp = a.strong;
     a.appendChild(id);
     a.appendChild(fdp);
     entries.appendChild(a);
 }
-response.object = xml;
+response.object = results;
 ]]></execute>
     </select>
  
