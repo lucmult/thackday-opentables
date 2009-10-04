@@ -20,7 +20,7 @@ var entries = <entries></entries>;
 var id = null;
 var fdp = null;
 
-for each(a in results){
+for each(a in results.a){
     id = new RegExp("id=\\d+").exec(a.href);
     fdp = a.strong;
     a.appendChild(<id>{id}</id>);
